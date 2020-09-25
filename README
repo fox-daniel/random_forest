@@ -27,9 +27,9 @@ To set up a conda environment with the proper dependencies:
 
 $ create conda --name <name> python=3.7
 $ conda activate <name>
-$ conda install pip
 $ pip install -r requirements.txt
 
+Modules
 
 data_for_tests.py
 	functions used to generate synthetic data to use for tests
