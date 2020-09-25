@@ -25,8 +25,10 @@ README
 
 To set up a conda environment with the proper dependencies:
 
-$ create conda --name <name> python=3.7 pip
+$ create conda --name <name> python=3.7
 $ conda activate <name>
+(unnecessary?) $ conda install pip
+$ conda install <pkg> <pkg> ... 
 $ pip install -r requirements.txt
 
 
