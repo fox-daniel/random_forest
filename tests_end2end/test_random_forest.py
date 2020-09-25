@@ -14,6 +14,8 @@ import decision_tree
 importlib.reload(decision_tree)
 import random_forest
 importlib.reload(random_forest)
+import evaluation
+importlib.reload(evaluation)
 
 # num_points = 1000
 # max_samples = 1000
@@ -49,9 +51,9 @@ def test_octavo(num_points, classes, xbound, ybound, zbound, max_depth, min_node
 	y = xy_parent[:,-1]
 
 	forest = random_forest.grow_random_forest(X, y, max_depth, min_node_size, min_loss)
-	predictions = forest_predict(forest, X)
+	predictions = random_forest.forest_predict(forest, X)
 	targets = y
-	tfpns = tfpn(predictions, targets)
-	cm = make_confusion_matrix(*tfpns, percentage = True)
-	result = [precision(cm), recall(cm), fpr(cm)]
+	tfpns = evaluation.tfpn(predictions, targets)
+	cm = evaluation.make_confusion_matrix(*tfpns, percentage = True)
+	result = [evaluation.precision(cm), evaluation.sensitivity(cm), evaluation.fpr(cm)]
 	assert expected == result
