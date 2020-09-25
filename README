@@ -4,7 +4,7 @@ TO DO:
 
 COMMIT PATCHES as carrying out the following: 
 
-3. incorporate my new decision tree into my random forest 
+
 4. create unit and end-to-end tests for random forest
 5. put my code into a deliverable form that can be opened and run on another machine with one command (after unzipping)
 6. test on GCP or AWS virtual machine
