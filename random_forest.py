@@ -1,8 +1,14 @@
-import numpy as np 
-import pandas as pd
-import pdb
+import sys
+sys.path.append('/Users/Daniel/Code/decision_tree')
+sys.path.append('/Users/Daniel/Code/random_forest')
+import numpy as np
+np.random.seed(seed = 11)
+import importlib
+import pytest
 
-from decision_tree import predict
+import decision_tree
+importlib.reload(decision_tree)
+
 
 
 
@@ -16,10 +22,10 @@ def forest_predict(forest, x, threshold = .5):
     predictions = np.zeros(x.shape[0])
     for tree in forest:
         preds = decision_tree.predict(tree, x)
-        predictions += pred
+        predictions += preds
     predictions = predictions/len(forest)
 
-    class_predictions = (predictions >= comparison).astype(int)
+    class_predictions = (predictions >= threshold).astype(int)
     return class_predictions
 
 def grow_random_forest(X, y, num_trees = 10, 
@@ -42,7 +48,7 @@ def grow_random_forest(X, y, num_trees = 10,
         sample_indices = np.random.choice(np.arange(X.shape[0]), size = max_samples, replace = bootstrap)
         sample_features = X[sample_indices]
         sample_targets = y[sample_indices]
-        tree = grow_decision_tree(sample_features, sample_targets, max_depth, min_node_size, min_loss, max_features)
+        tree = decision_tree.grow_decision_tree(sample_features, sample_targets, max_depth, min_node_size, min_loss, max_features)
         forest.append(tree)
         if print_progress == True:
             print(f'{i+1} trees have been grown.')
