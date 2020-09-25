@@ -1,6 +1,24 @@
+import sys
+sys.path.append('/Users/Daniel/Code/decision_tree')
+sys.path.append('/Users/Daniel/Code/random_forest')
 import numpy as np
+np.random.seed(seed = 11)
+import importlib
+import pytest
 
-X = np.array([[.1,.2,0],[.2,.7,1],[.3,.8,0]])
-sample_indices = np.random.choice(np.arange(X.shape[0]), 2, replace = False)
-print(sample_indices)
-print(X[sample_indices])
+import data_for_tests
+importlib.reload(data_for_tests)
+import plot_data
+importlib.reload(plot_data)
+import decision_tree
+importlib.reload(decision_tree)
+import random_forest
+importlib.reload(random_forest)
+import evaluation
+importlib.reload(evaluation)
+
+for i in range(5):
+	data = data_for_tests.make_diagonal_ndim(100, 5)
+	# print(data)
+	print(data.iloc[:,-1].sum())
+# plot_data.plot_data(data)
