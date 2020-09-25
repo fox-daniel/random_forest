@@ -40,9 +40,9 @@ def test_octavo(num_points, classes, xbound, ybound, zbound, max_depth, min_node
 	[
 	(1000, 2, 2, [1, 1, 0], .01),
 	(1000, 3, 2, [1, 1, 0], .01),
-	(1000, 4, 2, [1, 1, 0], .01),
-	(10000, 10, 'sqrt', [1, 1, 0], .05),
-	(10000, 20, 'sqrt', [1, 1, 0], .05)
+	(1000, 4, 2, [1, 1, 0], .01)
+	# (10000, 10, 'sqrt', [1, 1, 0], .05), # commented out because they take a long time to run
+	# (10000, 20, 'sqrt', [1, 1, 0], .05) # commented out because they take a long time to run
 	])
 def test_diagonal_ndim(num_points, dim, max_features, expected, precision_bound):
 	xy_parent = data_for_tests.make_diagonal_ndim(num_points, dim).values

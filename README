@@ -23,6 +23,13 @@ Revise dt alg: tree data structure should be a pair of lists:
 
 README
 
+To set up a conda environment with the proper dependencies:
+
+$ create conda --name <name> python=3.7 pip
+$ conda activate <name>
+$ pip install -r requirements.txt
+
+
 data_for_tests.py
 	functions used to generate synthetic data to use for tests
 
