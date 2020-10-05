@@ -33,24 +33,39 @@ Save the following modules into your working directory:
 
 ## Usage
 
-Run the following code in a python script:
+Run the following code in a python script using your own data:
 ```
 import decision_tree
 import random_forest
 
-X = <numpy array of features>
-y = <numpy array of labels (0 or 1)>
+X = <your data: numpy array of features>
+y = <your data: numpy array of labels (0 or 1)>
 
 forest = grow_random_forest(X, y)
 
-X' = <numpy array of features of new data>
+X' = <your data: numpy array of features of other data>
 predictions = forest_predict(X')
 ```
 
 Run the example script:
 ```
->>>python random_forest_example.py
+$python random_forest_example.py
 ```
+It trains and evaluates a random forest model on synthetic data and reports the results.
+
+The function grow_random_forest() accepts the following arguments (default values listed):
+
+* X -- numpy array of features (floats)
+* y -- numpy array of labels (ints: 0 or 1)
+* num_trees=10,
+* max_features="sqrt",
+* max_depth=5,
+* min_node_size=5,
+* max_samples=None,
+* bootstrap=True,
+* min_loss=0.056,
+* print_progress=False,
+
 
 ## Contributing
 
