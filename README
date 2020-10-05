@@ -1,47 +1,44 @@
+# random_forest
 
-TO DO:
+random_forest is a python module for training and predicting with a random forest on data with float features and binary labels (0 or 1).
 
+## Features
 
-COMMIT PATCHES as carrying out the following: 
+* Train a random forest
+* Predict with a random forest
 
-4. clean up code according to: https://imankulov.name/posts/python-cleanup/
-5. put my code into a deliverable form that can be opened and run on another machine with one command (after unzipping)
-6. test on GCP or AWS virtual machine
-7. numba functions 
-7.1 cProfile decision_tree.py and revise accordingly
-7.2 retest on GCP or AWS VM
-7.3 incorporate pruning into decision tree
-8. redo the analysis that onethreebio asked for with my better code
-9. Send to CDO (Cory) and ask for feedback and permission to post on Kaggle etc
-10. make github repo public
-11. post my results to Kaggle (the dataset onethreebio gave me came from Kaggle and there are a bunch of analyses there, not sure any use the modified random forest)
+## Data Structure
 
-Optional:
+* A random forest is a list of decision trees
+* Trees are defined by lists of nodes. These are all terminal nodes. Internal nodes are not saved.
+* Each node is a tuple, (path, loss, predict, num):
+    * path: a list that defines the region of the node, using the data structure: 
+        * [(feature_column_ind, value, orientation),...] where
+            * feature_column_ind: the index of a column of the array or dataframe
+            * value: the value at which the split of the region is made
+            * orientation: 'upper' (>) or 'lower' (<=) 
+    * loss: the value of the loss function for the region defined by the path
+    * predict: the class prediction for the region defined by the path
+    * num: number of training points in the node 
+    
 
-Revise dt alg: tree data structure should be a pair of lists: 
-	tree = [[non-terminal-nodes],[terminal-nodes]] so that only the non-terminal-nodes are split with each call to branch() (OR put a T/F flag in each node to indicate if terminal) 
+## Installation
 
-README
+## Usage
 
-To set up a conda environment with the proper dependencies:
+```
+import decision_tree
+import random_forest
 
-$ create conda --name <name> python=3.7
-$ conda activate <name>
-$ pip install -r requirements.txt
+X = numpy array of features
+y = numpy array of labels (0 or 1)
 
-Modules
+forest = grow_random_forest(X, y)
 
-data_for_tests.py
-	functions used to generate synthetic data to use for tests
+X' = numpy array of features of new data
+predictions = forest_predict(X')
+```
 
-plot_data.py 
-	plot_data() for plotting 2D data for binary classification
+## Contributing
 
-Sketching.ipynb
-	jupyter nb to use for sketching
-
-tests_unit/
-	contains unit tests 
-
-tests_end2end/
-	contains end-to-end tests
+## License
