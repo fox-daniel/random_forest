@@ -6,6 +6,7 @@ random_forest is a python module for training and predicting with a random fores
 
 * Train a random forest
 * Predict with a random forest
+* Print the trees of the forest
 
 ## Data Structure
 
@@ -23,6 +24,14 @@ random_forest is a python module for training and predicting with a random fores
     
 
 ## Installation
+
+Save the following modules into your working directory:
+* decision_tree.py
+* random_forest.py
+* evaluation.py
+* data_for_tests.py
+
+Save random_forest.py
 
 ## Usage
 
