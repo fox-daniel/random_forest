@@ -31,21 +31,25 @@ Save the following modules into your working directory:
 * evaluation.py
 * data_for_tests.py
 
-Save random_forest.py
-
 ## Usage
 
+Run the following code in a python script:
 ```
 import decision_tree
 import random_forest
 
-X = numpy array of features
-y = numpy array of labels (0 or 1)
+X = <numpy array of features>
+y = <numpy array of labels (0 or 1)>
 
 forest = grow_random_forest(X, y)
 
-X' = numpy array of features of new data
+X' = <numpy array of features of new data>
 predictions = forest_predict(X')
+```
+
+Run the example script:
+```
+>>>python random_forest_example.py
 ```
 
 ## Contributing

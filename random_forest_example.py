@@ -23,8 +23,15 @@ def test_diagonal_ndim(num_points, dim, max_features, expected, precision_bound)
         [evaluation.precision(cm), evaluation.sensitivity(cm), evaluation.fpr(cm)]
     )
     expected = np.array(expected)
-    print("expected: [precision, sensitivity, false-positive-ratae]", expected)
-    print("results: [precision, sensitivity, false-positive-ratae]", result)
+    print(
+        f"{num_points} are randomly generated in the unit cube in {dim}-dimensions.\n \
+    Those with the sum of coordinates >= {dim}/2 are labeled 1, those below are\n \
+    labeled 0."
+    )
+    print("The model achieves the following results:")
+    print("precision:", result[0])
+    print("sensitivity:", result[1])
+    print("false-positive-rate:", result[2])
 
 
 test_diagonal_ndim(num_points, dim, max_features, expected, precision_bound)
