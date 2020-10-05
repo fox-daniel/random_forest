@@ -1,16 +1,8 @@
-import sys
-
-sys.path.append("/Users/Daniel/Code/decision_tree")
-sys.path.append("/Users/Daniel/Code/random_forest")
 import numpy as np
 
 np.random.seed(seed=11)
-import importlib
-import pytest
 
 import decision_tree
-
-importlib.reload(decision_tree)
 
 
 def print_forest(forest):
