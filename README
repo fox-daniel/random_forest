@@ -33,25 +33,50 @@ Save the following modules into your working directory:
 
 ## Usage
 
-Run the following code in a python script using your own data:
+Run the following code in a python script:
 ```
+import numpy as np
 import decision_tree
 import random_forest
+import evaluation
+import data_for_tests
 
-X = <your data: numpy array of features>
-y = <your data: numpy array of labels (0 or 1)>
+num_points, dim, max_features = 1000, 5, 2
 
-forest = grow_random_forest(X, y)
+# generate data
+xy_parent = data_for_tests.make_diagonal_ndim(num_points, dim).values
+X = xy_parent[:, :-1]
+y = xy_parent[:, -1]
 
-X' = <your data: numpy array of features of other data>
-predictions = forest_predict(X')
+# train the model -- grow the forest
+forest = random_forest.grow_random_forest(
+    X, y, num_trees=30, max_depth=20, max_features=max_features, min_node_size=1
+)
+
+# make predictions
+predictions = random_forest.forest_predict(forest, X)
+
+# calculate the numbers of true positives, false positives, true negatives, false negatives
+tfpns = evaluation.tfpn(predictions, y)
+
+# calculate the confusion matrix
+cm = evaluation.make_confusion_matrix(*tfpns, percentage=True)
+
+# calculate metrics: precision, sensitivity, false-positive-rate
+metrics = np.array(
+    [evaluation.precision(cm), evaluation.sensitivity(cm), evaluation.fpr(cm)]
+)
+
+print(
+    f"{num_points} are randomly generated in the unit cube in {dim}-dimensions.\n \
+Those with the sum of coordinates >= {dim}/2 are labeled 1, \n those below are \
+labeled 0."
+)
+print("The model achieves the following in sample metrics:")
+print("precision:", metrics[0])
+print("sensitivity:", metrics[1])
+print("false-positive-rate:", metrics[2])
 ```
-
-Run the example script:
-```
-$python random_forest_example.py
-```
-It trains and evaluates a random forest model on synthetic data and reports the results.
 
 The function grow_random_forest() accepts the following arguments (default values listed):
 
