@@ -17,10 +17,6 @@ Each node is a tuple, (path, loss, predict, num):
 
 import numpy as np
 
-# from numba import jit
-# import pdb
-
-
 def predict(tree, x):
     """Predict the Outcome for the decision tree model.
 
