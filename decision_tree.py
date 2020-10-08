@@ -16,6 +16,8 @@ Each node is a tuple, (path, loss, predict, num):
 """
 
 import numpy as np
+from numba import njit
+
 
 def predict(tree, x):
     """Predict the Outcome for the decision tree model.
@@ -476,7 +478,7 @@ def sort_parent(xy_parent, col):
     xy_parent = xy_parent[xy_parent[:, col].argsort()]
     return xy_parent
 
-
+@njit
 def info_gain(loss_parent, loss_upper, loss_lower, num_parent, num_upper, num_lower):
     """
     Calculate the information gain for splitting the data in parent node into upper and lower nodes.
@@ -490,7 +492,7 @@ def info_gain(loss_parent, loss_upper, loss_lower, num_parent, num_upper, num_lo
     )
     return ig
 
-
+@njit
 def loss_fnc(num_0, num_1):
     """loss function -- Only accepts nonzero inputs
     input:

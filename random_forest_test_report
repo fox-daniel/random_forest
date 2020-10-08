@@ -1,0 +1,187 @@
+***** New Run of Test *****
+Time of run: 2020-10-08 16:21:22.917601
+Notes: no numba	 
+data type: make_diagonal_ndim
+1000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 2.376940965652466
+Predicting with the Random Forest took: 0.09572577476501465
+Precision: 0.9920318725099602, Recall: 1.0
+***** End ****
+
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:22:10.742642
+Notes: no numba	 
+data type: make_diagonal_ndim
+1000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 2.3161330223083496
+Predicting with the Random Forest took: 0.1016080379486084
+Precision: 0.9920318725099602, Recall: 1.0
+***** End ****
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:22:16.723501
+Notes: no numba	 
+data type: make_diagonal_ndim
+1000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 2.629417896270752
+Predicting with the Random Forest took: 0.10058712959289551
+Precision: 0.9920318725099602, Recall: 1.0
+***** End ****
+
+Start using Numba
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:23:43.228513
+Notes: no numba	 
+data type: make_diagonal_ndim
+1000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 2.756315231323242
+Predicting with the Random Forest took: 0.10726284980773926
+Precision: 0.9920318725099602, Recall: 1.0
+***** End ****
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:37:43.445445
+Notes: numba: njit on loss and info_gain	 
+data type: make_diagonal_ndim
+1000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 3.1654109954833984
+Predicting with the Random Forest took: 0.10141897201538086
+Precision: 0.9920318725099602, Recall: 1.0
+***** End ****
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:38:01.996350
+Notes: numba: njit on loss and info_gain	 
+data type: make_diagonal_ndim
+1000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 2.8499369621276855
+Predicting with the Random Forest took: 0.09764719009399414
+Precision: 0.9920318725099602, Recall: 1.0
+***** End ****
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:38:08.348107
+Notes: numba: njit on loss and info_gain	 
+data type: make_diagonal_ndim
+1000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 2.890164852142334
+Predicting with the Random Forest took: 0.1013791561126709
+Precision: 0.9920318725099602, Recall: 1.0
+***** End ****
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:40:02.166724
+Notes: no numba: 	 
+data type: make_diagonal_ndim
+10000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 70.15400815010071
+Predicting with the Random Forest took: 4.498635768890381
+Precision: 0.9960159362549801, Recall: 1.0
+***** End ****
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:42:14.251443
+Notes: no numba: 	 
+data type: make_diagonal_ndim
+10000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 70.30356812477112
+Predicting with the Random Forest took: 4.468495845794678
+Precision: 0.9960159362549801, Recall: 1.0
+***** End ****
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:44:48.959936
+Notes: numba: njit on loss and info_gain 	 
+data type: make_diagonal_ndim
+10000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 68.91710329055786
+Predicting with the Random Forest took: 4.4858009815216064
+Precision: 0.9960159362549801, Recall: 1.0
+***** End ****
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:46:45.331375
+Notes: numba: njit on loss and info_gain 	 
+data type: make_diagonal_ndim
+10000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 70.02821207046509
+Predicting with the Random Forest took: 4.537297964096069
+Precision: 0.9960159362549801, Recall: 1.0
+***** End ****
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:49:15.676108
+Notes: numba: njit on loss and info_gain 	 
+data type: make_diagonal_ndim
+10000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 70.90551090240479
+Predicting with the Random Forest took: 4.683262825012207
+Precision: 0.9960159362549801, Recall: 1.0
+***** End ****
+
+only report second run since numba compilation is done on firt run
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 16:52:36.375232
+Notes: numba: njit on loss and info_gain 	 
+data type: make_diagonal_ndim
+10000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 68.23227977752686
+Predicting with the Random Forest took: 4.570291996002197
+Precision: 0.9960159362549801, Recall: 1.0
+***** End ****
+
+
+***** New Run of Test *****
+Time of run: 2020-10-08 17:12:10.277710
+Notes: numba: njit on loss and info_gain 	 
+data type: make_diagonal_ndim
+10000 points in 8 dimensions.
+max_depth = 20
+min_node_size = 1
+Growing the Random Forest took: 68.55395889282227
+Predicting with the Random Forest took: 4.558416128158569
+Precision: 0.9960159362549801, Recall: 1.0
+***** End ****
+
+
+

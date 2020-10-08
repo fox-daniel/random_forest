@@ -9,14 +9,14 @@ np.random.seed(seed=0)
 
 import decision_tree
 
-importlib.reload(decision_tree)
+# importlib.reload(decision_tree)
 
 import random_forest
 
-importlib.reload(random_forest)
+# importlib.reload(random_forest)
 
-# from decision_tree import *
-from test_data import *
+from data_for_tests import *
+from evaluation import *
 
 import time
 from datetime import datetime
@@ -26,7 +26,7 @@ report.write("***** New Run of Test *****\n")
 
 report.write(f"Time of run: {datetime.now()}\n")
 
-note = "Notes: \
+note = "Notes: numba: njit on loss and info_gain & best_cut \
 	 \n"
 
 if note:
@@ -38,8 +38,8 @@ report.write(f"data type: {testing_data.__name__}\n")
 
 # select number of data points
 if testing_data == make_diagonal_ndim:
-    num_points = 100
-    dim = 5
+    num_points = 10000
+    dim = 8
     report.write(f"{num_points} points in {dim} dimensions.\n")
 
 data = testing_data(num_points, dim)
@@ -55,7 +55,20 @@ min_node_size = 1
 report.write(f"max_depth = {max_depth}\n")
 report.write(f"min_node_size = {min_node_size}\n")
 
-# train model
+# train model - don't report!
+tree = random_forest.grow_random_forest(
+    X, y, 
+    num_trees=10,
+    max_features="sqrt",
+    max_depth=max_depth,
+    min_node_size=min_node_size,
+    max_samples=None,
+    bootstrap=True,
+    min_loss=0.056,
+    print_progress=False,
+)
+
+# train model - now that numba has compiled - report
 start = time.time()
 tree = random_forest.grow_random_forest(
     X, y, 
@@ -86,7 +99,7 @@ finish = time.time()
 duration = finish - start
 report.write(f"Predicting with the Random Forest took: {duration}\n")
 
-tfpns = tfpn(preds, data.Outcome)
+tfpns = tfpn(preds, y)
 cm = make_confusion_matrix(*tfpns, percentage=True)
 # plot_cm(cm)
 report.write((f"Precision: {precision(cm)}, Recall: {sensitivity(cm)}\n"))

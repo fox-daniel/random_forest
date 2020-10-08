@@ -28,6 +28,10 @@ COMMIT PATCHES as carrying out the following:
 
 Optional:
 
+Revise dt alg: select_node_data should not need to concatenate X and y; have an xy array from the start and slice as needed
+
+Revise tree data structure: use array with each node a row, the row has (+1/-1, cut_value) in each column as well as additional info so that fast column-wise arithmetic can be used to select node data
+
 Revise dt alg: tree data structure should be a pair of lists: 
 	tree = [[non-terminal-nodes],[terminal-nodes]] so that only the non-terminal-nodes are split with each call to branch() (OR put a T/F flag in each node to indicate if terminal) 
 
