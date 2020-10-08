@@ -279,6 +279,12 @@ def make_octavo(
 
 
 def make_diagonal_ndim(num_points, dim):
+    """num_points are randomly generated in the unit cube in dim-dimensions.\
+    Those with the sum of coordinates >= dim/2 are labeled 1, those below are \
+    labeled 0.
+    Input: num_points, dim
+    Output: dataframe with features and labels (last column)
+    """
     X = np.random.random((num_points, dim))
     y = (X.sum(axis=1) > dim / 2).astype(int)
     data = pd.DataFrame(np.concatenate([X, y[:, np.newaxis]], axis=1))
