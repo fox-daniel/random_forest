@@ -16,17 +16,23 @@ COMMIT PATCHES as carrying out the following:
 	
 5. put my code into a deliverable form that can be opened and run on another machine with one command (after unzipping)
 6. test on GCP or AWS virtual machine
-*7. numba functions
-7.05 update requirements file for virtualenv 
-7.1 cProfile decision_tree.py and revise accordingly
-7.2 retest on GCP or AWS VM
-7.3 incorporate pruning into decision tree
-8. redo the analysis that onethreebio asked for with my better code
-9. Send to CDO (Cory) and ask for feedback and permission to post on Kaggle etc
-10. make github repo public
-11. post my results to Kaggle (the dataset onethreebio gave me came from Kaggle and there are a bunch of analyses there, not sure any use the modified random forest)
+*7. redo the analysis that onethreebio asked for with my better code
+8. Send to CDO (Cory) and ask for feedback and permission to post on Kaggle etc
+9. make github repo public
+10. post my results to Kaggle (the dataset onethreebio gave me came from Kaggle and there are a bunch of analyses there, not sure any use the modified random forest)
 
 Optional:
+
+numba functions
+update requirements file for virtualenv 
+cProfile decision_tree.py and revise accordingly
+retest on GCP or AWS VM
+
+Revise dt alg: select_node_data should not need to concatenate X and y; have an xy array from the start and slice as needed
+
+Revise tree data structure: use array with each node a row, the row has (+1/-1, cut_value) in each column as well as additional info so that fast column-wise arithmetic can be used to select node data
+
+Break best_cut into smaller function to find slow parts and revise or apply numba 
 
 Revise dt alg: tree data structure should be a pair of lists: 
 	tree = [[non-terminal-nodes],[terminal-nodes]] so that only the non-terminal-nodes are split with each call to branch() (OR put a T/F flag in each node to indicate if terminal) 
