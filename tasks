@@ -5,19 +5,19 @@ COMMIT PATCHES as carrying out the following:
 
 4. clean up code according to: https://imankulov.name/posts/python-cleanup/
 	- revise README according to models listed
-	- update requirements file or yml file
+	- update requirements file
 	- format code with 'black' (learn to use from command line)
 	- remove unused imports
 	- remove unused variables
 	- follow PEP-8 naming conventions
-	- run pylint
+	[NOT DONE]- run pylint
 	- remove debugging prints
 	- remove commented-out code
 	
 5. put my code into a deliverable form that can be opened and run on another machine with one command (after unzipping)
 6. test on GCP or AWS virtual machine
-7. numba functions
-7.05 update yml file for conda env 
+*7. numba functions
+7.05 update requirements file for virtualenv 
 7.1 cProfile decision_tree.py and revise accordingly
 7.2 retest on GCP or AWS VM
 7.3 incorporate pruning into decision tree
