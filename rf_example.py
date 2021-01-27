@@ -4,7 +4,7 @@ import random_forest
 import evaluation
 import data_for_tests
 
-num_points, dim, max_features = 1000, 5, 2
+num_points, dim, max_features = 1000, 10, 3
 
 # generate data
 xy_parent = data_for_tests.make_diagonal_ndim(num_points, dim).values
