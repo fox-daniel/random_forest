@@ -1,0 +1,11 @@
+.DS_Store
+*.jpg
+*.zip
+*.pem
+*-checkpoint.ipynb
+*.csv
+*.pyc
+__pycache__/
+sketchbook.py
+which_python.py
+**/rfenv
