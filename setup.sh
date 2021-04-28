@@ -4,7 +4,7 @@ read;
 if [ "$REPLY" = "n" ]; then
 	echo 'exit'
 elif [ "$REPLY" = "y" ]; then
-	virtualenv rfvenv
+	python3.7 -m virtualenv rfvenv
 else
 	echo "That is not a valid reply. Please type 'y' or 'n'."
 fi
