@@ -31,7 +31,7 @@ metrics = np.array(
 )
 
 print(
-f"{num_points} points are randomly generated in the unit cube in {dim}-dimensions.\n \
+    f"{num_points} points are randomly generated in the unit cube in {dim}-dimensions.\n \
 Those with the sum of coordinates >= {dim}/2 are labeled 1, \n those below are \
 labeled 0."
 )
@@ -39,7 +39,7 @@ print("The model achieves the following in sample metrics:")
 print("precision:", metrics[0])
 print("sensitivity:", metrics[1])
 print("false-positive-rate:", metrics[2])
-print('If the metrics are not 1,1,0, then there is a problem.')
+print("If the metrics are not 1,1,0, then there is a problem.")
 # if (metrics[0] == 1) & (metrics[1] == 1) & (metrics[2] == 0):
 # 	print(0)
 # else:

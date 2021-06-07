@@ -17,6 +17,7 @@ Each node is a tuple, (path, loss, predict, num):
 
 import numpy as np
 
+
 def predict(tree, x):
     """Predict the Outcome for the decision tree model.
 
